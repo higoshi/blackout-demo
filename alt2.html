@@ -4,12 +4,11 @@
 if (!window._alert) {
 	window._alert = window.alert;
 	window.alert = function(arg) {
-		var time = new Date().getTime();
-		while (new Date().getTime() - time < 5000);
-    
-		_alert(arg)
+		_alert(arg);
 		
-		while (new Date().getTime() - time < 10000);
+		window.onbeforeunload = function(e) {
+			return 'window onbeforeunload';
+		};
 	}
 }
 alert('foobar');location.href = './';
