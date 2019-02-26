@@ -1,0 +1,16 @@
+<!doctype html>
+<body>
+<script>
+if (!window._alert) {
+	window._alert = window.alert;
+	window.alert = function(arg) {
+		var time = new Date().getTime();
+    while (new Date().getTime() - time < 5000);
+    
+		_alert(arg)
+		
+		while (new Date().getTime() - time < 10000);
+	}
+}
+alert('foobar');location.href = './';
+</script>
