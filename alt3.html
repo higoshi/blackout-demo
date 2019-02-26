@@ -1,0 +1,12 @@
+<!doctype html>
+<body>
+<script>
+if (!window._alert) {
+	window._alert = window.alert;
+	window.alert = function(arg) {
+		_alert(arg);
+		throw new Error('test');
+	}
+}
+alert('foobar');location.href = './';
+</script>
