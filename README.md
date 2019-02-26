@@ -1,3 +1,3 @@
 # blackout-demo
 
-* Chrome ~= 72
+* Android Chrome ~= 72
