@@ -1,8 +1,8 @@
 <!doctype html>
 <body>
 <script>
-if (!_alert) {
-	_alert = window.alert;
+if (!window._alert) {
+	window._alert = window.alert;
 	window.alert = function(arg) {
 		var time = new Date().getTime();
 		_alert(arg)
