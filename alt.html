@@ -1,11 +1,14 @@
 <!doctype html>
 <body>
 <script>
-_alert = window.alert;
-alert = () => {
-	var time = new Date().getTime();
-	_alert.apply([this].join(Array.from(arguments)));
-	while (new Date().getTime() - time < 100);
+if (!_alert) {
+	_alert = window.alert;
+	window.alert = function(arg) {
+		var time = new Date().getTime();
+		_alert(arg)
+		
+		while (new Date().getTime() - time < 100);
+	}
 }
 
 alert('foobar');location.href = './';
